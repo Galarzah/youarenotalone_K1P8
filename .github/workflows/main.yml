@@ -1,0 +1,28 @@
+            - nombre: Cargar un artefacto de compilación
+  usos: acciones/upload-artifact@v4.6.2
+  con:
+    # Nombre del artefacto
+    nombre: # opcional, el valor predeterminado es artefacto
+    # Un archivo, directorio o patrón comodín que describe qué cargar
+    camino:
+    # El comportamiento deseado si no se encuentran archivos utilizando la ruta proporcionada.
+Opciones disponibles:
+  advertir: emite una advertencia pero no hace que falle la acción
+  error: Falla la acción con un mensaje de error
+  ignorar: no muestra ninguna advertencia o error, la acción no falla
+
+    if-no-files-found: # opcional, el valor predeterminado es advertir
+    # Duración después de la cual el artefacto expirará en días. 0 significa usar la retención predeterminada.
+Mínimo 1 día. Máximo 90 días, a menos que se modifique desde la página de configuración del repositorio.
+
+    días de retención: # opcional
+    El nivel de compresión de Zlib que se aplicará al archivo de artefactos. El valor puede variar de 0 a 9: - 0: Sin compresión - 1: Máxima velocidad - 6: Compresión predeterminada (igual que GNU Gzip) - 9: Máxima compresión. Los niveles más altos ofrecen una mejor compresión, pero tardan más en completarse. Para archivos grandes que no se comprimen fácilmente, se recomienda un valor de 0 para una carga mucho más rápida.
+
+    nivel de compresión: # opcional, el valor predeterminado es 6
+    # Si es verdadero, se eliminará un artefacto con el mismo nombre antes de cargar uno nuevo. Si es falso, la acción fallará si ya existe un artefacto con el nombre especificado. No falla si el artefacto no existe.
+
+    sobrescribir: # opcional, el valor predeterminado es falso
+    # Si es verdadero, se incluirán los archivos ocultos en el artefacto. Si es falso, se excluirán.
+
+    include-hidden-files: # opcional, el valor predeterminado es falso
+          
